@@ -1,4 +1,4 @@
-package com.example.qrcodescanner
+package com.aubynsamuel.qrcodescanner
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
