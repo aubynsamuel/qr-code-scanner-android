@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "qrcodescanner"
 include(":app")
+include(":baselineprofile")
