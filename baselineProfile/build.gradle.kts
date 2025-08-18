@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.baselineprofile"
+    namespace = "com.aubynsamuel.baselineprofile"
     compileSdk = 36
 
     compileOptions {

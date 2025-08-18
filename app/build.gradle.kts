@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.qrcodescanner"
+    namespace = "com.aubynsamuel.qrcodescanner"
     compileSdk = 36
 
     defaultConfig {

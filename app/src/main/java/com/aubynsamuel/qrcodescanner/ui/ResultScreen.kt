@@ -266,7 +266,7 @@ fun sendEmail(context: Context, emailData: String) {
         } else emailData
 
         val intent = Intent(Intent.ACTION_SENDTO).apply {
-            Intent.setData = Uri.parse("mailto:$email")
+            data = Uri.parse("mailto:$email")
         }
         context.startActivity(intent)
     } catch (e: ActivityNotFoundException) {
@@ -307,7 +307,7 @@ fun addToContacts(context: Context, phoneNumber: String) {
         } else phoneNumber
 
         val intent = Intent(ContactsContract.Intents.Insert.ACTION).apply {
-            Intent.setType = ContactsContract.RawContacts.CONTENT_TYPE
+            type = ContactsContract.RawContacts.CONTENT_TYPE
             putExtra(ContactsContract.Intents.Insert.PHONE, number)
         }
         context.startActivity(intent)
@@ -320,7 +320,7 @@ fun addContactFromVCard(context: Context, vcardData: String) {
     try {
         // Basic vCard parsing for name and phone
         val intent = Intent(ContactsContract.Intents.Insert.ACTION).apply {
-            Intent.setType = ContactsContract.RawContacts.CONTENT_TYPE
+            type = ContactsContract.RawContacts.CONTENT_TYPE
         }
         context.startActivity(intent)
     } catch (e: ActivityNotFoundException) {
@@ -341,7 +341,7 @@ fun searchWeb(context: Context, query: String) {
 
 fun shareText(context: Context, text: String) {
     val intent = Intent(Intent.ACTION_SEND).apply {
-        Intent.setType = "text/plain"
+        type = "text/plain"
         putExtra(Intent.EXTRA_TEXT, text)
     }
     context.startActivity(Intent.createChooser(intent, "Share QR Code Content"))
