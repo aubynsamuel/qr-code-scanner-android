@@ -1,4 +1,4 @@
-package com.example.qrcodescanner.ui
+package com.aubynsamuel.qrcodescanner.ui
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -31,6 +31,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
@@ -194,7 +195,7 @@ fun ResultScreen(
 @Composable
 fun ActionButton(
     text: String,
-    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    icon: ImageVector,
     onClick: () -> Unit,
 ) {
     OutlinedButton(
@@ -265,7 +266,7 @@ fun sendEmail(context: Context, emailData: String) {
         } else emailData
 
         val intent = Intent(Intent.ACTION_SENDTO).apply {
-            data = Uri.parse("mailto:$email")
+            Intent.setData = Uri.parse("mailto:$email")
         }
         context.startActivity(intent)
     } catch (e: ActivityNotFoundException) {
@@ -306,7 +307,7 @@ fun addToContacts(context: Context, phoneNumber: String) {
         } else phoneNumber
 
         val intent = Intent(ContactsContract.Intents.Insert.ACTION).apply {
-            type = ContactsContract.RawContacts.CONTENT_TYPE
+            Intent.setType = ContactsContract.RawContacts.CONTENT_TYPE
             putExtra(ContactsContract.Intents.Insert.PHONE, number)
         }
         context.startActivity(intent)
@@ -319,7 +320,7 @@ fun addContactFromVCard(context: Context, vcardData: String) {
     try {
         // Basic vCard parsing for name and phone
         val intent = Intent(ContactsContract.Intents.Insert.ACTION).apply {
-            type = ContactsContract.RawContacts.CONTENT_TYPE
+            Intent.setType = ContactsContract.RawContacts.CONTENT_TYPE
         }
         context.startActivity(intent)
     } catch (e: ActivityNotFoundException) {
@@ -340,7 +341,7 @@ fun searchWeb(context: Context, query: String) {
 
 fun shareText(context: Context, text: String) {
     val intent = Intent(Intent.ACTION_SEND).apply {
-        type = "text/plain"
+        Intent.setType = "text/plain"
         putExtra(Intent.EXTRA_TEXT, text)
     }
     context.startActivity(Intent.createChooser(intent, "Share QR Code Content"))

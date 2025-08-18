@@ -10,9 +10,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.qrcodescanner.ui.ResultScreen
-import com.example.qrcodescanner.ui.ScannerScreen
-import com.example.qrcodescanner.ui.theme.QRScannerTheme
+import com.aubynsamuel.qrcodescanner.ui.ResultScreen
+import com.aubynsamuel.qrcodescanner.ui.ScannerScreen
+import com.aubynsamuel.qrcodescanner.ui.theme.QRScannerTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.example.qrcodescanner.ui
+package com.aubynsamuel.qrcodescanner.ui
 
 import android.Manifest
 import android.content.pm.PackageManager
