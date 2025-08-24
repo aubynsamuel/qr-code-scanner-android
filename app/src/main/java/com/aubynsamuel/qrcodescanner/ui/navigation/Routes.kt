@@ -3,10 +3,10 @@ package com.aubynsamuel.qrcodescanner.ui.navigation
 import kotlinx.serialization.Serializable
 
 @Serializable
-object Scanner
+object ScannerScreenRoute
 
 @Serializable
-data class ResultScreen(val scannedData: String)
+data class ResultScreenRoute(val scannedData: String)
 
 @Serializable
 object QRScannerScreen
