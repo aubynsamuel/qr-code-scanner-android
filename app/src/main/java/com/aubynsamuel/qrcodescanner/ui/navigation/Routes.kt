@@ -7,6 +7,3 @@ object ScannerScreenRoute
 
 @Serializable
 data class ResultScreenRoute(val scannedData: String)
-
-@Serializable
-object QRScannerScreen
