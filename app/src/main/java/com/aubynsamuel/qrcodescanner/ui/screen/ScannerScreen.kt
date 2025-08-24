@@ -127,7 +127,7 @@ fun ScannerScreen(
                                             }
                                         }
                                         .addOnFailureListener { e ->
-                                            Log.e("Scanner", "Barcode scanning failed", e)
+                                            Log.e("ScannerScreen", "Barcode scanning failed", e)
                                         }
                                         .addOnCompleteListener {
                                             imageProxy.close()
@@ -135,7 +135,7 @@ fun ScannerScreen(
                                 }
                             } catch (e: Exception) {
                                 imageProxy.close()
-                                Log.e("Scanner", "Analysis exception", e)
+                                Log.e("ScannerScreen", "Analysis exception", e)
                             }
                         }
 
@@ -148,7 +148,7 @@ fun ScannerScreen(
                                 imageAnalyzer
                             )
                         } catch (e: Exception) {
-                            Log.e("Scanner", "Camera binding failed", e)
+                            Log.e("ScannerScreen", "Camera binding failed", e)
                         }
 
                         previewView

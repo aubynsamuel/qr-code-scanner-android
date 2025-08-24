@@ -8,22 +8,21 @@ import androidx.navigation.toRoute
 import com.aubynsamuel.qrcodescanner.ui.screen.QRScannerScreen
 import com.aubynsamuel.qrcodescanner.ui.screen.ResultScreen
 import com.aubynsamuel.qrcodescanner.ui.screen.ScannerScreen
-import java.util.Scanner
 
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination = Scanner
+        startDestination = ScannerScreenRoute
     ) {
-        composable<Scanner> {
+        composable<ScannerScreenRoute> {
             ScannerScreen { scannedData ->
-                navController.navigate(ResultScreen(scannedData))
+                navController.navigate(ResultScreenRoute(scannedData))
             }
         }
-        composable<ResultScreen> {
-            val args = it.toRoute<ResultScreen>()
+        composable<ResultScreenRoute> {
+            val args = it.toRoute<ResultScreenRoute>()
             val scannedData = args.scannedData
             ResultScreen(
                 scannedData = scannedData,
@@ -34,7 +33,7 @@ fun Navigation() {
         }
         composable<QRScannerScreen> {
             QRScannerScreen(onQrCodeScanned = { scannedData ->
-                navController.navigate(ResultScreen(scannedData))
+                navController.navigate(ResultScreenRoute(scannedData))
             })
         }
     }
