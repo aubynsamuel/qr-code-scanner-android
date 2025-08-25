@@ -58,7 +58,8 @@ dependencies {
     implementation(libs.barcode.scanning)
     implementation(libs.androidx.navigation.compose)
 
-    implementation(libs.kotlinx.serialization.json)
+   // Kotlin Serialization (For Type-safe Navigation)
+ implementation(libs.kotlinx.serialization.json)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
